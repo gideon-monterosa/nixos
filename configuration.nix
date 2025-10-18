@@ -11,6 +11,7 @@
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
+  boot.kernelParams = [ "video=Virtual-1:3072x1920" ];
 
   networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -39,8 +40,6 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    git
-
     # for hyprland
     waybar
     foot
@@ -59,6 +58,10 @@
     enable = true;
     wheelNeedsPassword = false;
   };
+
+  services.spice-vdagentd.enable = true;
+  services.xserver.videoDrivers = [ "virtio" ];
+
 
   # hardware.graphics.enable = true;
 
