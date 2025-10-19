@@ -5,7 +5,9 @@
   home.homeDirectory = "/home/gideon";
 
   home.packages = with pkgs; [
-    firefox
+    firefox # TODO: use zen-browser
+    foot
+    fira-code # maybe change to nerd font variation
   ];
 
   programs.git = {
@@ -14,11 +16,20 @@
     userEmail = "gideon.monterosa@gmail.com";
   };
 
+  programs.foot = {
+    enable = true;
+    settings = {
+      main = {
+        font = "FiraCode:size=12";
+      };
+    };
+  };
+
   wayland.windowManager.hyprland = {
     enable = true;
     settings = {
       input.kb_layout = "ch";
-      monitor = "Virtual-1, 3072x1920, auto, 3";
+      monitor = "Virtual-1, 3072x1920, auto, 2";
 
       general = {
         "$mainMod" = "SUPER";
