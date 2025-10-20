@@ -36,21 +36,62 @@
 
         searchCase = "smart";
 
+        globals = {
+          mapleader = " ";
+          editorconfig = true;
+        };
+
         options = {
           relativenumber = true;
         };
 
-        lsp = {
+        keymaps = [
+          {
+            key = "-";
+            mode = "n";
+            action = "<cmd>Oil --float<cr>";
+            desc = "open directory";
+          }
+        ];
+
+        # lsp = {
+        #   enable = true;
+        # };
+        #
+        # languages = {
+        #   # currently results in deprecation warning
+        #   enableLSP = true;
+        #   enableFormat = true;
+        #   enableTreesitter = true;
+        #
+        #   nix.enable = true;
+        # };
+
+        theme = {
           enable = true;
+          name = "github";
+          style = "dark_high_contrast";
         };
 
-        languages = {
-          # currently results in deprecation warning
-          # enableLSP = true;
-          # enableFormat = true;
-          # enableTreesitter = true;
-          #
-          # nix.enable = true;
+        git = {
+          enable = true;
+          gitsigns.enable = true;
+        };
+
+        navigation.harpoon = {
+          enable = true;
+          mappings = {
+            file1 = "<leader>1";
+            file2 = "<leader>2";
+            file3 = "<leader>3";
+            file4 = "<leader>4";
+            listMarks = "<leader>h";
+            markFile = "<leader>H";
+          };
+        };
+
+        utility.oil-nvim = {
+          enable = true;
         };
       };
     };
