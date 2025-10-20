@@ -42,10 +42,6 @@
   environment.systemPackages = with pkgs; [
   ];
 
-  programs.nvf = {
-    enable = true;
-  };
-
   programs.hyprland = {
     enable = true;
     xwayland.enable = true;
@@ -59,6 +55,9 @@
   services.spice-vdagentd.enable = true;
   services.xserver.videoDrivers = [ "virtio" ];
 
+  # currently use this for zen browser
+  # TODO: replace by installing zen another way
+  services.flatpak.enable = true;
 
   # hardware.graphics.enable = true;
 

@@ -25,6 +25,37 @@
     };
   };
 
+  programs.nvf = {
+    enable = true;
+    defaultEditor = true;
+
+    settings = {
+      vim = {
+        viAlias = true;
+        vimAlias = true;
+
+        searchCase = "smart";
+
+        options = {
+          relativenumber = true;
+        };
+
+        lsp = {
+          enable = true;
+        };
+
+        languages = {
+          # currently results in deprecation warning
+          # enableLSP = true;
+          # enableFormat = true;
+          # enableTreesitter = true;
+          #
+          # nix.enable = true;
+        };
+      };
+    };
+  };
+
   wayland.windowManager.hyprland = {
     enable = true;
     settings = {

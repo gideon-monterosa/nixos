@@ -10,7 +10,7 @@
     nvf.url = "github:notashelf/nvf";
   };
 
-  outputs = { self, nixpkgs, home-manager, nvf, ... }: { 
+  outputs = inputs@{ self, nixpkgs, home-manager, nvf, ... }: { 
     nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
       modules = [
         ./configuration.nix
@@ -18,9 +18,13 @@
         {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
-          home-manager.users.gideon = ./home.nix;
+          home-manager.users.gideon = {
+            imports = [
+              nvf.homeManagerModules.default
+              ./home.nix
+            ];
+          };
         }
-        nvf.nixosModules.default
       ];
     };
   };
