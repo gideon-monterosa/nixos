@@ -11,7 +11,7 @@
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-  boot.kernelParams = [ "video=Virtual-1:3072x1920" ];
+  # boot.kernelParams = [ "video=Virtual-1:3072x1920" ];
 
   networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -54,10 +54,6 @@
 
   services.spice-vdagentd.enable = true;
   services.xserver.videoDrivers = [ "virtio" ];
-
-  # currently use this for zen browser
-  # TODO: replace by installing zen another way
-  services.flatpak.enable = true;
 
   # hardware.graphics.enable = true;
 
