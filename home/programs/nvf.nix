@@ -1,4 +1,4 @@
-{ config, pkgs, ...}:
+{ ... }:
 
 {
   programs.nvf = {
@@ -18,6 +18,13 @@
         };
 
         options = {
+          autoindent = true;
+          smartindent = true;
+
+          tabstop = 2;
+          shiftwidth = 2;
+          softtabstop = 2;
+
           relativenumber = true;
         };
 
@@ -27,15 +34,20 @@
           style = "dark_high_contrast";
         };
 
-        # lsp = {
-        #   enable = true;
-        # };
-        #
+        lsp = {
+          enable = true;
+        };
+
+        diagnostics = {
+          enable = true;
+          config.virtual_text = true;
+        };
+
         languages = {
           # currently results in deprecation warning
-          enableLSP = true;
-          # enableFormat = true;
+          enableFormat = true;
           enableTreesitter = true;
+          enableExtraDiagnostics = true;
 
           nix.enable = true;
         };
