@@ -1,9 +1,13 @@
-{ config, pkgs, ...}:
+#########################
+# CURRENTLY DEACTIVATED #
+#########################
+
+{ pkgs, ...}:
 
 {
   home.packages = with pkgs; [
     foot
-    fira-code # maybe change to nerd font variation
+    # fira-code # maybe change to nerd font variation
   ];
 
   programs.foot = {

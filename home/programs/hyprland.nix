@@ -1,16 +1,25 @@
-{ config, pkgs, ...}:
+_:
 
 {
   wayland.windowManager.hyprland = {
     enable = true;
     settings = {
       input.kb_layout = "ch";
-      monitor = "Virtual-1, 3072x1920, auto, 2";
+      # monitor = "Virtual-1, 3072x1920, auto, 2";
+      exec-once = "waybar";
 
       general = {
         "$mainMod" = "SUPER";
-        "$terminal" = "foot";
+        "$terminal" = "ghostty";
         "$browser" = "firefox";
+      };
+
+      decoration = {
+        blur = {
+          enabled = "yes";
+          size = 8;
+          passes = 2;
+        };
       };
 
       bind = [

@@ -1,18 +1,22 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 
 {
-  home.username = "gideon";
-  home.homeDirectory = "/home/gideon";
+  home = {
+  username = "gideon";
+    homeDirectory = "/home/gideon";
 
-  home.packages = with pkgs; [
-    firefox # TODO: use zen-browser
-  ];
+    packages = with pkgs; [
+      firefox # TODO: use zen-browser
+    ];
+  };
 
   imports = [
-    ./programs/nvf.nix
-    ./programs/hyprland.nix
     ./programs/git.nix
-    ./programs/foot.nix
+    ./programs/hyprland.nix
+    ./programs/waybar.nix
+    ./programs/rofi.nix
+    ./programs/ghostty.nix
+    ./programs/nvf.nix
   ];
 
   home.stateVersion = "25.05";
