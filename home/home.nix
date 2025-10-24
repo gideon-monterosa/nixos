@@ -17,6 +17,7 @@
     ./programs/hyprland.nix
     ./programs/hyprpaper.nix
     ./programs/waybar.nix
+    ./programs/cursor.nix
     ./programs/rofi.nix
     ./programs/ghostty.nix
     ./programs/nvf.nix
