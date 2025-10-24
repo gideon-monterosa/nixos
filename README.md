@@ -12,7 +12,6 @@
 - notification service
 - screenshot tool
 - test screensharing
-- replace mouse cursor
 - nvim autocmds (double click esc and highlight on yank)
 - nvim ui and picker plugins
 - another try with the zen browser

@@ -20,7 +20,7 @@ _:
       general = {
         "$mainMod" = "SUPER";
         "$terminal" = "ghostty";
-        "$browser" = "firefox";
+        "$browser" = "zen";
       };
 
       bind = [

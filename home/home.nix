@@ -20,6 +20,7 @@
     ./programs/cursor.nix
     ./programs/rofi.nix
     ./programs/ghostty.nix
+    ./programs/browser.nix
     ./programs/nvf.nix
   ];
 }

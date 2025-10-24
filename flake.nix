@@ -7,10 +7,11 @@
       url = "github:nix-community/home-manager/release-25.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    zen-browser.url = "github:0xc000022070/zen-browser-flake";
     nvf.url = "github:notashelf/nvf";
   };
 
-  outputs = { nixpkgs, home-manager, nvf, ... }: { 
+  outputs = { nixpkgs, home-manager, nvf, ... } @ inputs: { 
     nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
       modules = [
         ./configuration.nix
@@ -21,6 +22,7 @@
             useUserPackages = true;
 
             extraSpecialArgs = {
+              inherit inputs;
               assets = {
                 wallpaper = ./assets/wallpaper.jpg;
               };
