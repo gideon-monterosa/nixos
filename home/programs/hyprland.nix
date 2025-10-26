@@ -21,7 +21,11 @@ _:
         "$mainMod" = "SUPER";
         "$terminal" = "ghostty";
         "$browser" = "zen";
+        gaps_in = 4;
+        gaps_out = 8;
       };
+
+      binds.drag_threshold = 10;
 
       bind = [
         "$mainMod, T, exec, $terminal"
@@ -39,6 +43,8 @@ _:
         "$mainMod SHIFT, j, movewindow, d"
         "$mainMod SHIFT, k, movewindow, u"
         "$mainMod SHIFT, l, movewindow, r"
+
+        "$mainMod, f, fullscreen, 1"
 
         "$mainMod, 1, workspace, 1"
         "$mainMod, 2, workspace, 2"
@@ -61,6 +67,15 @@ _:
         "$mainMod SHIFT, 8, movetoworkspace, 8"
         "$mainMod SHIFT, 9, movetoworkspace, 9"
         "$mainMod SHIFT, 0, movetoworkspace, 10"
+      ];
+
+      bindc = [
+        "$mainMod, mouse:272, togglefloating"
+      ];
+
+      bindm = [
+        "$mainMod, mouse:272, movewindow"
+        "$mainMod, mouse:273, resizewindow"
       ];
     };
   };

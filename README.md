@@ -4,14 +4,18 @@
 
 - ssh key config
 - finish waybar
-- add wallpaper
 - configure rofi
+- file exploerer
 - discord, spotify and teams
 - media player
 - configure zsh with tooling (can be taken from my dotfiles repo)
 - notification service
 - screenshot tool
+- clipboard manager (and global copy paste binds)
 - test screensharing
 - nvim autocmds (double click esc and highlight on yank)
 - nvim ui and picker plugins
-- another try with the zen browser
+
+## Examples
+
+[example hyprland confs](https://wiki.hypr.land/Configuring/Example-configurations/)
