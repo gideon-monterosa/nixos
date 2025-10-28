@@ -1,6 +1,4 @@
-{ ... }:
-
-{
+_: {
   programs.nvf = {
     enable = true;
     defaultEditor = true;
@@ -34,17 +32,23 @@
           style = "dark_high_contrast";
         };
 
-        lsp = {
-          enable = true;
-        };
-
         diagnostics = {
           enable = true;
           config.virtual_text = true;
         };
 
+        syntaxHighlighting = true;
+
+        treesitter = {
+          enable = true;
+        };
+
+        lsp = {
+          enable = true;
+          formatOnSave = true;
+        };
+
         languages = {
-          # currently results in deprecation warning
           enableFormat = true;
           enableTreesitter = true;
           enableExtraDiagnostics = true;
@@ -52,7 +56,10 @@
           nix.enable = true;
         };
 
-        autocomplete.nvim-cmp.enable = true;
+        autocomplete.blink-cmp = {
+          enable = true;
+          friendly-snippets.enable = true;
+        };
 
         keymaps = [
           {

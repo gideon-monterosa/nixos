@@ -1,8 +1,6 @@
-{ pkgs, ... }:
-
-{
+{pkgs, ...}: {
   home = {
-  username = "gideon";
+    username = "gideon";
     homeDirectory = "/home/gideon";
 
     packages = with pkgs; [
@@ -22,5 +20,6 @@
     ./programs/ghostty.nix
     ./programs/browser.nix
     ./programs/nvf.nix
+    ./programs/zsh.nix
   ];
 }

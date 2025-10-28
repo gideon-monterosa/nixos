@@ -5,7 +5,7 @@
 - ssh key config
 - finish waybar
 - configure rofi
-- file exploerer
+- file explorer
 - discord, spotify and teams
 - media player
 - configure zsh with tooling (can be taken from my dotfiles repo)
@@ -15,6 +15,8 @@
 - test screensharing
 - nvim autocmds (double click esc and highlight on yank)
 - nvim ui and picker plugins
+
+- maybe use quickshell
 
 ## Examples
 

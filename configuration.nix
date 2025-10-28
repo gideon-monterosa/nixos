@@ -1,12 +1,10 @@
-{ config, pkgs, ... }:
+{pkgs, ...}: {
+  imports = [
+    # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+  ];
 
-{
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-    ];
-
-  nix.settings.experimental-features = [ "nix-command" "flakes"];
+  nix.settings.experimental-features = ["nix-command" "flakes"];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -21,9 +19,14 @@
   time.timeZone = "Europe/Zurich";
   i18n.defaultLocale = "en_US.UTF-8";
 
-  services.xserver.xkb = {
-    layout = "ch";
-    variant = "de_nodeadkeys";
+  services = {
+    xserver.xkb = {
+      layout = "ch";
+      variant = "de_nodeadkeys";
+    };
+
+    spice-vdagentd.enable = true;
+    xserver.videoDrivers = ["virtio"];
   };
 
   console.keyMap = "sg";
@@ -31,14 +34,15 @@
   users.users.gideon = {
     isNormalUser = true;
     description = "gideon";
-    extraGroups = [ "networkmanager" "wheel" "video" ];
+    extraGroups = ["networkmanager" "wheel" "video"];
     packages = with pkgs; [];
   };
 
+  programs.zsh.enable = true;
+  users.defaultUserShell = pkgs.zsh;
+
   nixpkgs.config.allowUnfree = true;
 
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
   environment.systemPackages = with pkgs; [
   ];
 
@@ -51,9 +55,6 @@
     enable = true;
     wheelNeedsPassword = false;
   };
-
-  services.spice-vdagentd.enable = true;
-  services.xserver.videoDrivers = [ "virtio" ];
 
   # hardware.graphics.enable = true;
 
