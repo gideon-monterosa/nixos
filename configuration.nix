@@ -51,12 +51,29 @@
   ];
 
   environment.systemPackages = with pkgs; [
+    # Essential system tools
+    vim
+    wget
+    curl
+    git
+    htop
   ];
+
+  # Environment variables
+  environment.sessionVariables = {
+    NIXOS_OZONE_WL = "1"; # Hint electron apps to use Wayland
+    EDITOR = "nvim";
+    VISUAL = "nvim";
+  };
 
   security.sudo = {
     enable = true;
     wheelNeedsPassword = false;
+    execWheelOnly = true;
   };
+
+  # Additional security settings
+  security.polkit.enable = true;
 
   programs = {
     zsh.enable = true;

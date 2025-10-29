@@ -97,6 +97,37 @@ _: {
         "$mainMod, mouse:272, movewindow"
         "$mainMod, mouse:273, resizewindow"
       ];
+
+      # Window rules
+      windowrulev2 = [
+        # Float specific apps
+        "float, class:(pavucontrol)"
+        "float, class:(thunar), title:(File Operation Progress)"
+        "float, class:(org.gnome.Calculator)"
+        
+        # Opacity rules
+        "opacity 0.95 0.85, class:(ghostty)"
+        "opacity 0.95 0.85, class:(thunar)"
+        
+        # Workspace assignments
+        "workspace 1, class:(zen-alpha)"
+        "workspace 2, class:(code)"
+        "workspace 3, class:(discord)"
+        "workspace 4, class:(spotify)"
+      ];
+
+      # Animations
+      animations = {
+        enabled = true;
+        bezier = "myBezier, 0.05, 0.9, 0.1, 1.05";
+        animation = [
+          "windows, 1, 7, myBezier"
+          "windowsOut, 1, 7, default, popin 80%"
+          "border, 1, 10, default"
+          "fade, 1, 7, default"
+          "workspaces, 1, 6, default"
+        ];
+      };
     };
   };
 }
