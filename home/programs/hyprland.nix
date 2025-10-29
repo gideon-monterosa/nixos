@@ -50,6 +50,16 @@ _: {
         # Clipboard manager
         "$mainMod, V, exec, cliphist list | walker --dmenu | cliphist decode | wl-copy"
 
+        # Brightness control
+        ", XF86MonBrightnessUp, exec, brightnessctl set +5%"
+        ", XF86MonBrightnessDown, exec, brightnessctl set 5%-"
+
+        # Audio control
+        ", XF86AudioRaiseVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+"
+        ", XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
+        ", XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+        ", XF86AudioMicMute, exec, wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"
+
         "$mainMod, h, movefocus, l"
         "$mainMod, j, movefocus, d"
         "$mainMod, k, movefocus, u"

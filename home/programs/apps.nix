@@ -37,6 +37,11 @@
     xdg-utils
     wl-clipboard-rs
     pavucontrol
+    
+    # Network and system utilities
+    networkmanagerapplet
+    brightnessctl
+    wireplumber  # For wpctl audio control
   ];
 
   # Mako notification service

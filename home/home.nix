@@ -27,6 +27,7 @@
     ./programs/nvf.nix
     ./programs/zsh.nix
     ./programs/apps.nix
+    ./programs/gtk.nix
     # ./programs/foot.nix # Currently deactivated
   ];
 }

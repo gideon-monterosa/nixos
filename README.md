@@ -96,6 +96,29 @@ identityFile = "~/.ssh/id_ed25519";
 ### Git Settings
 Update your Git info in `home/programs/git.nix`.
 
+## Maintenance
+
+### Update System
+```bash
+# Update flake inputs
+nix flake update
+
+# Rebuild system
+sudo nixos-rebuild switch --flake .#nixos
+# or
+nh os switch
+
+# Clean old generations (keeping 3)
+nix-collect-garbage --delete-older-than 7d
+# or let nh auto-clean (already configured)
+```
+
+### Backup Configuration
+Your NixOS configuration is declarative! Just keep this repository backed up:
+```bash
+git push origin main
+```
+
 ## TODO
 
 - [ ] Finish quickshell bar configuration
