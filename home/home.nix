@@ -9,7 +9,7 @@
 
     packages = with pkgs; [
       firefox # TODO: use zen-browser
-      inputs.quickshell.packages.${pkgs.system}.default
+      inputs.quickshell.packages.${pkgs.system}.default # TODO also have the config in the repo
     ];
 
     stateVersion = "25.05";
@@ -21,7 +21,7 @@
     ./programs/hyprpaper.nix
     ./programs/waybar.nix
     ./programs/cursor.nix
-    ./programs/rofi.nix
+    ./programs/walker.nix
     ./programs/ghostty.nix
     ./programs/browser.nix
     ./programs/nvf.nix

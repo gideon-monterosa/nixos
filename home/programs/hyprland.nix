@@ -19,6 +19,8 @@ _: {
         "$mainMod" = "SUPER";
         "$terminal" = "ghostty";
         "$browser" = "zen";
+        "$appswitcher" = "walker";
+
         gaps_in = 4;
         gaps_out = 8;
       };
@@ -28,6 +30,7 @@ _: {
       bind = [
         "$mainMod, T, exec, $terminal"
         "$mainMod, B, exec, $browser"
+        "$mainMod, SPACE, exec, $appswitcher"
 
         "$mainMod, M, exit,"
         "$mainMod, Q, killactive,"
