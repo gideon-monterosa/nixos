@@ -8,15 +8,15 @@
     homeDirectory = "/home/gideon";
 
     packages = with pkgs; [
-      firefox # TODO: use zen-browser
       inputs.quickshell.packages.${pkgs.system}.default # TODO also have the config in the repo
     ];
 
-    stateVersion = "25.05";
+    stateVersion = "24.11";
   };
 
   imports = [
     ./programs/git.nix
+    ./programs/ssh.nix
     ./programs/hyprland.nix
     ./programs/hyprpaper.nix
     ./programs/waybar.nix
@@ -26,5 +26,7 @@
     ./programs/browser.nix
     ./programs/nvf.nix
     ./programs/zsh.nix
+    ./programs/apps.nix
+    # ./programs/foot.nix # Currently deactivated
   ];
 }

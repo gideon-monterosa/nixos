@@ -3,13 +3,12 @@ _: {
     enable = true;
     settings = {
       input.kb_layout = "ch";
-      exec-once = "qs";
 
       decoration = {
         rounding = 12;
 
         blur = {
-          enabled = "yes";
+          enabled = true;
           size = 8;
           passes = 2;
         };
@@ -20,10 +19,17 @@ _: {
         "$terminal" = "ghostty";
         "$browser" = "zen";
         "$appswitcher" = "walker";
+        "$fileManager" = "thunar";
 
         gaps_in = 4;
         gaps_out = 8;
       };
+
+      exec-once = [
+        "qs"
+        "wl-paste --type text --watch cliphist store"
+        "wl-paste --type image --watch cliphist store"
+      ];
 
       binds.drag_threshold = 10;
 
@@ -31,9 +37,18 @@ _: {
         "$mainMod, T, exec, $terminal"
         "$mainMod, B, exec, $browser"
         "$mainMod, SPACE, exec, $appswitcher"
+        "$mainMod, E, exec, $fileManager"
 
         "$mainMod, M, exit,"
         "$mainMod, Q, killactive,"
+
+        # Screenshots
+        ", Print, exec, grim -g \"$(slurp)\" - | wl-copy"
+        "$mainMod, Print, exec, grim - | wl-copy"
+        "SHIFT, Print, exec, grim -g \"$(slurp)\" ~/Pictures/screenshot-$(date +%Y%m%d-%H%M%S).png"
+
+        # Clipboard manager
+        "$mainMod, V, exec, cliphist list | walker --dmenu | cliphist decode | wl-copy"
 
         "$mainMod, h, movefocus, l"
         "$mainMod, j, movefocus, d"
@@ -46,6 +61,10 @@ _: {
         "$mainMod SHIFT, l, movewindow, r"
 
         "$mainMod, f, fullscreen, 1"
+        "$mainMod SHIFT, f, fullscreen, 0"
+        "$mainMod SHIFT, SPACE, togglefloating,"
+        "$mainMod, P, pseudo,"
+        "$mainMod, S, togglesplit,"
 
         "$mainMod, 1, workspace, 1"
         "$mainMod, 2, workspace, 2"

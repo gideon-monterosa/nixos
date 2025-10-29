@@ -1,0 +1,16 @@
+# NixOS build artifacts
+result
+result-*
+
+# Editor/IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Temporary files
+tmp/
+.tmp/
+*.tmp
