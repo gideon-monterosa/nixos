@@ -42,13 +42,38 @@
 
   nixpkgs.config.allowUnfree = true;
 
-  environment.systemPackages = with pkgs; [
+  # Fonts
+  fonts.packages = with pkgs; [
+    nerd-fonts.fira-code
+    nerd-fonts.jetbrains-mono
+    roboto
+    font-awesome
   ];
+
+  environment.systemPackages = with pkgs; [
+    # Essential system tools
+    vim
+    wget
+    curl
+    git
+    htop
+  ];
+
+  # Environment variables
+  environment.sessionVariables = {
+    NIXOS_OZONE_WL = "1"; # Hint electron apps to use Wayland
+    EDITOR = "nvim";
+    VISUAL = "nvim";
+  };
 
   security.sudo = {
     enable = true;
     wheelNeedsPassword = false;
+    execWheelOnly = true;
   };
+
+  # Additional security settings
+  security.polkit.enable = true;
 
   programs = {
     zsh.enable = true;
@@ -66,7 +91,30 @@
     };
   };
 
-  # hardware.graphics.enable = true;
+  # XDG portal for screensharing
+  xdg.portal = {
+    enable = true;
+    extraPortals = with pkgs; [
+      xdg-desktop-portal-hyprland
+      xdg-desktop-portal-gtk
+    ];
+  };
+
+  # Audio with Pipewire
+  security.rtkit.enable = true;
+  services.pipewire = {
+    enable = true;
+    alsa.enable = true;
+    alsa.support32Bit = true;
+    pulse.enable = true;
+    jack.enable = true;
+  };
+
+  # Graphics
+  hardware.graphics = {
+    enable = true;
+    enable32Bit = true;
+  };
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
@@ -87,5 +135,5 @@
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
 
-  system.stateVersion = "25.05"; # Did you read the comment?
+  system.stateVersion = "24.11"; # Did you read the comment?
 }
