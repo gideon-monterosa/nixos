@@ -1,10 +1,15 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  inputs,
+  ...
+}: {
   home = {
     username = "gideon";
     homeDirectory = "/home/gideon";
 
     packages = with pkgs; [
       firefox # TODO: use zen-browser
+      inputs.quickshell.packages.${pkgs.system}.default
     ];
 
     stateVersion = "25.05";

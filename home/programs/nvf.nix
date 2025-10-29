@@ -54,6 +54,7 @@ _: {
           enableExtraDiagnostics = true;
 
           nix.enable = true;
+          qml.enable = true;
         };
 
         autocomplete.blink-cmp = {

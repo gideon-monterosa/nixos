@@ -1,11 +1,9 @@
-_:
-
-{
+_: {
   wayland.windowManager.hyprland = {
     enable = true;
     settings = {
       input.kb_layout = "ch";
-      exec-once = "waybar";
+      exec-once = "qs";
 
       decoration = {
         rounding = 12;

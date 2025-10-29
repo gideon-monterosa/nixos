@@ -38,7 +38,6 @@
     packages = with pkgs; [];
   };
 
-  programs.zsh.enable = true;
   users.defaultUserShell = pkgs.zsh;
 
   nixpkgs.config.allowUnfree = true;
@@ -46,14 +45,25 @@
   environment.systemPackages = with pkgs; [
   ];
 
-  programs.hyprland = {
-    enable = true;
-    xwayland.enable = true;
-  };
-
   security.sudo = {
     enable = true;
     wheelNeedsPassword = false;
+  };
+
+  programs = {
+    zsh.enable = true;
+
+    hyprland = {
+      enable = true;
+      xwayland.enable = true;
+    };
+
+    nh = {
+      enable = true;
+      clean.enable = true;
+      clean.extraArgs = "--keep 3";
+      flake = "/home/gideon/nixos/";
+    };
   };
 
   # hardware.graphics.enable = true;

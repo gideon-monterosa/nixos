@@ -8,7 +8,6 @@
 - file explorer
 - discord, spotify and teams
 - media player
-- configure zsh with tooling (can be taken from my dotfiles repo)
 - notification service
 - screenshot tool
 - clipboard manager (and global copy paste binds)
@@ -17,6 +16,8 @@
 - nvim ui and picker plugins
 
 - maybe use quickshell
+- shell: eza
+- shell: fzf
 
 ## Examples
 
