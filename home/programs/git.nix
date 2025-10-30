@@ -1,6 +1,4 @@
-_:
-
-{
+_: {
   programs.git = {
     enable = true;
     userName = "Gideon Monterosa";
@@ -10,6 +8,16 @@ _:
       core.editor = "nvim";
       color.ui = "auto";
       push.autoSetupRemote = true;
+      init.defaultBranch = "main";
+    };
+
+    delta = {
+      enable = true;
+      options = {
+        navigate = true;
+        light = false;
+        line-numbers = true;
+      };
     };
   };
 }

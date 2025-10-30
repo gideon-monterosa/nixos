@@ -19,7 +19,6 @@
     ./programs/git.nix
     ./programs/hyprland.nix
     ./programs/hyprpaper.nix
-    ./programs/waybar.nix
     ./programs/cursor.nix
     ./programs/walker.nix
     ./programs/ghostty.nix

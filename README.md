@@ -11,6 +11,8 @@
 - clipboard manager (and global copy paste binds)
 - nvim autocmds (double click esc and highlight on yank)
 - nvim ui and picker plugins
+- email client
+- bitwarden (setup and migration)
 
 - finish quickshell bar
 - shell: eza
