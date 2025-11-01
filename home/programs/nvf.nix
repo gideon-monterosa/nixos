@@ -119,14 +119,6 @@
             desc = "open directory";
           }
 
-          {
-            key = "<leader><leader>";
-            mode = "n";
-            action = "function() Snacks.picker.buffers() end";
-            lua = true;
-            desc = "find Buffers";
-          }
-
           # Find Pickers
           {
             key = "<leader><leader>";
