@@ -20,6 +20,7 @@ _: {
         "$terminal" = "ghostty";
         "$browser" = "zen";
         "$appswitcher" = "walker";
+        "$filemanager" = "nautilus";
 
         gaps_in = 4;
         gaps_out = 8;
@@ -35,6 +36,7 @@ _: {
         "$mainMod, T, exec, $terminal"
         "$mainMod, B, exec, $browser"
         "$mainMod, SPACE, exec, $appswitcher"
+        "$mainMod, E, exec, $filemanager"
 
         "$mainMod, M, exit,"
         "$mainMod, Q, killactive,"

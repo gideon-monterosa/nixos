@@ -11,6 +11,7 @@
       firefox # TODO: use zen-browser
       inputs.quickshell.packages.${pkgs.system}.default # TODO also have the config in the repo
       claude-code
+      codex
     ];
 
     stateVersion = "25.05";
@@ -27,5 +28,6 @@
     ./programs/browser.nix
     ./programs/nvf.nix
     ./programs/zsh.nix
+    ./programs/nautilus.nix
   ];
 }

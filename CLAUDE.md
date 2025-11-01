@@ -34,6 +34,14 @@ This repository contains a personal NixOS configuration for learning and buildin
 - `nix flake check` - Validate flake configuration
 - `git add flake.lock` - Track lockfile changes after updates
 
+### Important: Git Integration with NixOS Builds
+**CRITICAL**: New configuration files must be added to git before running `nh os switch` or any NixOS rebuild command. Nix builds from the git tree, so untracked files will cause build failures with "path does not exist" errors.
+
+Always run `git add <new-file>` before rebuilding when:
+- Creating new files in `home/programs/`
+- Adding any new configuration files referenced by imports
+- The build fails with "path does not exist" errors for files you know exist
+
 ### When to Run `nh os switch`
 Use `nh os switch` after making changes to NixOS configuration files when:
 - Modifying system-level packages or services in `configuration.nix`
