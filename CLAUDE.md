@@ -91,6 +91,14 @@ Uses NVF (Neovim Flake) with:
 2. Apply changes: `nh os switch`
 3. Commit lockfile changes
 
+### Commit Message Guidelines
+Follow these conventions for consistent commit messages:
+- Use concise, descriptive commit messages starting with an action verb
+- Examples: "add eza and fzf terminal enhancements", "configure bat with Visual Studio Dark+ theme"
+- Keep the message to one line when possible
+- Focus on what was added/changed, not implementation details
+- Do not include AI generation watermarks or verbose descriptions
+
 ### Troubleshooting
 - Check flake syntax: `nix flake check`
 - View system logs: `journalctl -xe`

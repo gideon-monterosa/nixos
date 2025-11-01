@@ -65,16 +65,27 @@
       enable = true;
       enableZshIntegration = true;
 
+      # Commands for different contexts
       defaultCommand = "fd --type f --hidden --follow --exclude .git";
-      changeDirWidgetCommand = "fd --type d --hidden --follow --exclude .git";
       fileWidgetCommand = "fd --type f --hidden --follow --exclude .git";
+      changeDirWidgetCommand = "fd --type d --hidden --follow --exclude .git";
 
+      # Base UI options
       defaultOptions = [
         "--height 40%"
         "--layout=reverse"
         "--border"
-        "--preview-window=right:60%"
-        "--preview 'if [[ -f {} ]]; then bat --color=always --style=header,grid --line-range :300 {}; elif [[ -d {} ]]; then eza --tree --color=always {} | head -200; fi'"
+      ];
+
+      # File picker (Ctrl+T) with bat preview
+      fileWidgetOptions = [
+        "--preview 'bat --color=always --style=numbers --line-range :500 {}'"
+        "--bind 'ctrl-/:change-preview-window(down|hidden|)'"
+      ];
+
+      # Directory picker (Alt+C) with eza preview
+      changeDirWidgetOptions = [
+        "--preview 'eza --tree --color=always {} | head -200'"
       ];
     };
 

@@ -17,14 +17,13 @@
 
 ### NVF Nvim Config
 
-- autocmds (double click esc and highlight on yank)
+- autocmds (double click esc to close floating windows and highlight on yank)
 - ui plugin
 - mini surround
 
 ### Terminal
 
-- setup eza
-- setup fzf
+- fzf preview not working
 
 ### Quickshell
 
