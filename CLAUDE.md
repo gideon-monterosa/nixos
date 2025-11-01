@@ -34,6 +34,14 @@ This repository contains a personal NixOS configuration for learning and buildin
 - `nix flake check` - Validate flake configuration
 - `git add flake.lock` - Track lockfile changes after updates
 
+### When to Run `nh os switch`
+Use `nh os switch` after making changes to NixOS configuration files when:
+- Modifying system-level packages or services in `configuration.nix`
+- Adding new Home Manager programs or packages in `home/` directory  
+- Changing flake inputs or system-wide settings
+- Any configuration change that affects both system and user environments
+This command rebuilds and applies both system and Home Manager configurations simultaneously.
+
 ## Architecture Overview
 
 This is a NixOS configuration using flakes with Home Manager integration for user environment management.
