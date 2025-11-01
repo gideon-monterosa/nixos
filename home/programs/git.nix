@@ -17,6 +17,7 @@ _: {
         navigate = true;
         light = false;
         line-numbers = true;
+        syntax-theme = "Visual Studio Dark+";
       };
     };
   };
