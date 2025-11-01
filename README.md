@@ -2,23 +2,38 @@
 
 ## TODO's
 
-- ssh key config
+### OS
+
 - file explorer
 - discord, spotify and teams
 - media player
 - notification service
 - screenshot tool
 - clipboard manager (and global copy paste binds)
-- nvim autocmds (double click esc and highlight on yank)
-- nvim ui and picker plugins
 - email client
+- ssh key config
 - bitwarden (setup and migration)
-
-- finish quickshell bar
-- shell: eza
-- shell: fzf
-
 - test screensharing
+
+### NVF Nvim Config
+
+- autocmds (double click esc and highlight on yank)
+- ui plugin
+- mini surround
+
+### Terminal
+
+- setup eza
+- setup fzf
+
+### Quickshell
+
+- add the quickshell config to this repo
+- quickshell bar
+    - volume
+    - network
+- sound pannel
+- notification pannel
 
 ## Examples
 

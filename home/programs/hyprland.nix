@@ -25,6 +25,10 @@ _: {
         gaps_out = 8;
       };
 
+      misc = {
+        middle_click_paste = false;
+      };
+
       binds.drag_threshold = 10;
 
       bind = [
