@@ -4,6 +4,7 @@
     eza
     fd
     bat
+    zoxide
   ];
 
   programs = {
@@ -75,6 +76,11 @@
         "--preview-window=right:60%"
         "--preview 'if [[ -f {} ]]; then bat --color=always --style=header,grid --line-range :300 {}; elif [[ -d {} ]]; then eza --tree --color=always {} | head -200; fi'"
       ];
+    };
+
+    zoxide = {
+      enable = true;
+      enableZshIntegration = true;
     };
   };
 }
