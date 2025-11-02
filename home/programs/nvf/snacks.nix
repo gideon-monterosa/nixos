@@ -3,7 +3,19 @@
     utility.snacks-nvim = {
       enable = true;
       setupOpts = {
-        picker.enable = true;
+        picker = {
+          enable = true;
+          previewers = {
+            diff = {
+              builtin = false;
+              cmd = ["delta"];
+            };
+            git = {
+              builtin = false;
+              args = ["-c" "delta.line-numbers=false"];
+            };
+          };
+        };
 
         scroll = {
           enable = true;
@@ -18,4 +30,3 @@
     };
   };
 }
-

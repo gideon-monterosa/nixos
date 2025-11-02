@@ -19,4 +19,3 @@
     binds.whichKey.enable = true;
   };
 }
-
