@@ -1,5 +1,20 @@
 {
   vim.keymaps = [
+    # General keybinds
+    {
+      key = "<Esc>";
+      mode = "n";
+      action = "<cmd>nohlsearch<CR>";
+      desc = "Clear search highlighting";
+    }
+
+    {
+      key = "<Esc><Esc>";
+      mode = "t";
+      action = "<C-\\><C-n>";
+      desc = "Exit terminal mode";
+    }
+
     # File Management
     {
       key = "-";

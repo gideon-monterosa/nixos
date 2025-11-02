@@ -16,10 +16,8 @@
 
 ### NVF Nvim Config
 
-- autocmds (double click esc to close floating windows and highlight on yank)
 - ui plugin
 - mini surround
-- snacks picker should use delta
 - char under cursor not visible because of the colors
 - implement clipboard integration
 
