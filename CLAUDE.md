@@ -82,6 +82,12 @@ Uses NVF (Neovim Flake) with:
 - Oil.nvim for file management (-)
 - Harpoon for quick file navigation (Leader+1-4)
 
+Documentations on how to configure nvf can be found here:
+
+https://notashelf.github.io/nvf/options.html
+
+Dont hesetate to research the documentation or consult any other documentation to figure out how to configure nvf.
+
 ### Hardware Notes
 - Configured for virtual machine (spice-vdagentd, virtio drivers)
 - Swiss German keyboard layout

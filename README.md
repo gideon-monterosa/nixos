@@ -12,6 +12,7 @@
 - ssh key config
 - bitwarden (setup and migration)
 - test screensharing
+- clipboard bindings for hyprland dont work
 
 ### NVF Nvim Config
 

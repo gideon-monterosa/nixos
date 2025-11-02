@@ -8,7 +8,7 @@
     homeDirectory = "/home/gideon";
 
     packages = with pkgs; [
-      firefox # TODO: use zen-browser
+      firefox # backup at the moment
       inputs.quickshell.packages.${pkgs.system}.default # TODO also have the config in the repo
       claude-code
       codex
@@ -26,8 +26,9 @@
     ./programs/walker.nix
     ./programs/ghostty.nix
     ./programs/browser.nix
-    ./programs/nvf.nix
+    ./programs/nvf
     ./programs/zsh.nix
     ./programs/nautilus.nix
+    ./programs/bitwarden.nix
   ];
 }

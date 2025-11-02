@@ -1,10 +1,8 @@
-{ pkgs, ... }:
- 
-{
+{pkgs, ...}: {
   home.pointerCursor = {
-    name    = "macOS";
+    name = "macOS";
     package = pkgs.apple-cursor;
-    size    = 24;
+    size = 24;
 
     gtk.enable = true;
     hyprcursor.enable = true;
