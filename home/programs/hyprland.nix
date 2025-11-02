@@ -1,4 +1,8 @@
-_: {
+{pkgs, ...}: {
+  home.packages = with pkgs; [
+    wl-clipboard
+  ];
+
   wayland.windowManager.hyprland = {
     enable = true;
     settings = {
@@ -37,6 +41,9 @@ _: {
         "$mainMod, B, exec, $browser"
         "$mainMod, SPACE, exec, $appswitcher"
         "$mainMod, E, exec, $filemanager"
+
+        "$mainMod, C, exec, wl-copy"
+        "$mainMod, V, exec, wl-paste"
 
         "$mainMod, M, exit,"
         "$mainMod, Q, killactive,"
