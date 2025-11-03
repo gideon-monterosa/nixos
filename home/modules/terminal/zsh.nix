@@ -5,6 +5,7 @@
     fd
     bat
     zoxide
+    zsh-fzf-tab
   ];
 
   programs = {
@@ -21,7 +22,6 @@
 
     zsh = {
       enable = true;
-
       enableCompletion = false;
 
       history = {
@@ -35,14 +35,23 @@
 
       shellAliases = {
         # Eza aliases
-        ls = "eza --icons";
+        ls = "eza --icons=auto ";
         ll = "eza -la --icons --git";
-        lt = "eza --tree --icons";
-        la = "eza -a --icons";
+        lt = "eza --tree --icons=auto ";
+        la = "eza -a --icons=auto ";
         l = "eza -l --icons --git";
       };
 
       initContent = ''
+        # History search keybindings
+        bindkey '^p' history-search-backward
+        bindkey '^n' history-search-forward
+        bindkey '^[[A' history-search-backward  # Up arrow
+        bindkey '^[[B' history-search-forward   # Down arrow
+
+        # Enable fzf-tab
+        source ${pkgs.zsh-fzf-tab}/share/fzf-tab/fzf-tab.plugin.zsh
+
         # Fuzzy cd function
         fcd() {
           local dir

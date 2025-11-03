@@ -13,6 +13,7 @@
 - bitwarden (setup and migration)
 - test screensharing
 - clipboard bindings for hyprland dont work
+- fonts and nerdfonts
 
 ### NVF Nvim Config
 
@@ -23,7 +24,7 @@
 
 ### Terminal
 
-- fzf preview not working
+- zellij
 
 ### Quickshell
 
@@ -33,6 +34,10 @@
     - network
 - sound pannel
 - notification pannel
+
+### Darwin
+
+- migrate darwin config in here
 
 ## Examples
 
