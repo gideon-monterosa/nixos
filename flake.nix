@@ -33,7 +33,7 @@
   } @ inputs: {
     nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
       modules = [
-        ./configuration.nix
+        ./hosts/nixos-desktop/configuration.nix
         home-manager.nixosModules.home-manager
         {
           home-manager = {

@@ -22,6 +22,8 @@
     zsh = {
       enable = true;
 
+      enableCompletion = false;
+
       history = {
         size = 5000;
         append = true;
