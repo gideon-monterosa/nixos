@@ -1,6 +1,6 @@
 {
   imports = [
-    ./nvf
+    # ./nvf  # Disabled for Darwin compatibility
     ./git.nix
     ./zsh.nix
     ./ghostty.nix
