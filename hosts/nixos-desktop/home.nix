@@ -1,6 +1,8 @@
 _: {
   imports = [
-    ../../home/shared.nix
+    ../../home/profiles/gideon
     ../../home/modules/desktop
+    ../../home/modules/terminal
+    ../../home/modules/applications
   ];
 }

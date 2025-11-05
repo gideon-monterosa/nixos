@@ -45,9 +45,13 @@
   environment.systemPackages = with pkgs; [
   ];
 
-  security.sudo = {
-    enable = true;
-    wheelNeedsPassword = false;
+  security = {
+    sudo = {
+      enable = true;
+      wheelNeedsPassword = false;
+    };
+
+    polkit.enable = true;
   };
 
   programs = {

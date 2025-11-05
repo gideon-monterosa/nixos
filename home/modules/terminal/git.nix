@@ -1,24 +1,26 @@
 _: {
   programs.git = {
     enable = true;
-    userName = "Gideon Monterosa";
-    userEmail = "gideon.monterosa@gmail.com";
-
-    extraConfig = {
+    settings = {
+      user = {
+        name = "Gideon Monterosa";
+        email = "gideon.monterosa@gmail.com";
+      };
       core.editor = "nvim";
       color.ui = "auto";
       push.autoSetupRemote = true;
       init.defaultBranch = "main";
     };
+  };
 
-    delta = {
-      enable = true;
-      options = {
-        navigate = true;
-        light = false;
-        line-numbers = true;
-        syntax-theme = "Visual Studio Dark+";
-      };
+  programs.delta = {
+    enable = true;
+    enableGitIntegration = true;
+    options = {
+      navigate = true;
+      light = false;
+      line-numbers = true;
+      syntax-theme = "Visual Studio Dark+";
     };
   };
 }
