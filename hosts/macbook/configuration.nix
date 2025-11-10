@@ -33,6 +33,10 @@
 
   nix.settings.experimental-features = "nix-command flakes";
 
+  security.sudo.extraConfig = ''
+    %admin ALL=(ALL:ALL) NOPASSWD: ALL
+  '';
+
   users.users.gideon.home = "/Users/gideon";
 
   system = {
@@ -73,4 +77,3 @@
   nixpkgs.hostPlatform = "x86_64-darwin";
   nixpkgs.config.allowUnfree = true;
 }
-

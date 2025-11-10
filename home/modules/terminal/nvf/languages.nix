@@ -11,8 +11,7 @@
       enableExtraDiagnostics = true;
 
       nix.enable = true;
-      # qml.enable = true; # Removed in nvf main branch
+      # qml.enable = true;
     };
   };
 }
-

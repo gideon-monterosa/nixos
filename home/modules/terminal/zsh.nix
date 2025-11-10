@@ -42,7 +42,7 @@
         l = "eza -l --icons --git";
       };
 
-      initContent = ''
+      initExtra = ''
         # History search keybindings
         bindkey '^p' history-search-backward
         bindkey '^n' history-search-forward

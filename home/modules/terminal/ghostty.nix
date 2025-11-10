@@ -12,11 +12,15 @@
     ];
 
   programs.ghostty = {
-    enable = pkgs.stdenv.hostPlatform.isLinux || pkgs.stdenv.hostPlatform.isAarch64;
+    enable = true;
+    package =
+      if pkgs.stdenv.hostPlatform.isDarwin
+      then null
+      else pkgs.ghostty;
 
     settings = {
       font-family = "Fira Code";
-      font-size = "12";
+      font-size = "14";
       theme = "GitHub Dark High Contrast";
     };
   };

@@ -1,26 +1,28 @@
-_: {
+{pkgs, ...}: {
+  home.packages = [pkgs.delta];
+
   programs.git = {
     enable = true;
-    settings = {
-      user = {
-        name = "Gideon Monterosa";
-        email = "gideon.monterosa@gmail.com";
+    userName = "Gideon Monterosa";
+    userEmail = "gideon.monterosa@gmail.com";
+
+    extraConfig = {
+      core = {
+        editor = "nvim";
+        pager = "delta";
       };
-      core.editor = "nvim";
       color.ui = "auto";
       push.autoSetupRemote = true;
       init.defaultBranch = "main";
-    };
-  };
 
-  programs.delta = {
-    enable = true;
-    enableGitIntegration = true;
-    options = {
-      navigate = true;
-      light = false;
-      line-numbers = true;
-      syntax-theme = "Visual Studio Dark+";
+      interactive.diffFilter = "delta --color-only";
+
+      delta = {
+        navigate = true;
+        light = false;
+        line-numbers = true;
+        syntax-theme = "Visual Studio Dark+";
+      };
     };
   };
 }
