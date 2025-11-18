@@ -1,17 +1,17 @@
 # Edit this configuration file to define what should be installed on
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
-{
-  config,
-  pkgs,
-  ...
-}: {
+{pkgs, ...}: {
   imports = [
     ./hardware-configuration.nix
     ../../modules/kanata.nix
+    ../../modules/system/swiss-locale.nix
+    ../../modules/system/sudo.nix
+    ../../modules/desktop/gnome.nix
   ];
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
+  nixpkgs.config.allowUnfree = true;
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -26,43 +26,6 @@
 
   # Enable networking
   networking.networkmanager.enable = true;
-
-  # Set your time zone.
-  time.timeZone = "Europe/Zurich";
-
-  # Select internationalisation properties.
-  i18n.defaultLocale = "en_US.UTF-8";
-
-  i18n.extraLocaleSettings = {
-    LC_ADDRESS = "de_CH.UTF-8";
-    LC_IDENTIFICATION = "de_CH.UTF-8";
-    LC_MEASUREMENT = "de_CH.UTF-8";
-    LC_MONETARY = "de_CH.UTF-8";
-    LC_NAME = "de_CH.UTF-8";
-    LC_NUMERIC = "de_CH.UTF-8";
-    LC_PAPER = "de_CH.UTF-8";
-    LC_TELEPHONE = "de_CH.UTF-8";
-    LC_TIME = "de_CH.UTF-8";
-  };
-
-  # Enable the X11 windowing system.
-  services.xserver.enable = true;
-
-  # Enable the GNOME Desktop Environment.
-  services.xserver.displayManager.gdm.enable = true;
-  services.xserver.desktopManager.gnome.enable = true;
-  # Workaround for GNOME autologin: https://github.com/NixOS/nixpkgs/issues/103746#issuecomment-945091229
-  systemd.services."getty@tty1".enable = false;
-  systemd.services."autovt@tty1".enable = false;
-
-  # Configure keymap in X11
-  services.xserver.xkb = {
-    layout = "ch";
-    variant = "de_nodeadkeys";
-  };
-
-  # Configure console keymap
-  console.keyMap = "sg";
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
@@ -113,21 +76,10 @@
     users.gideon = {
       isNormalUser = true;
       description = "gideon";
-      extraGroups = ["networkmanager" "wheel"];
-      packages = with pkgs; [
-      ];
+      extraGroups = ["networkmanager"];
     };
 
     defaultUserShell = pkgs.zsh;
-  };
-
-  security = {
-    sudo = {
-      enable = true;
-      wheelNeedsPassword = false;
-    };
-
-    polkit.enable = true;
   };
 
   programs = {
@@ -141,22 +93,8 @@
     };
   };
 
-  # Enable automatic login for the user.
-  services.displayManager.autoLogin.enable = true;
-  services.displayManager.autoLogin.user = "gideon";
-
   # Install firefox.
   programs.firefox.enable = true;
-
-  # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
-
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
-  environment.systemPackages = with pkgs; [
-    #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-    #  wget
-  ];
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.

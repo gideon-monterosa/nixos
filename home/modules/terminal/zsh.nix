@@ -34,15 +34,16 @@
       };
 
       shellAliases = {
-        # Eza aliases
         ls = "eza --icons=auto ";
         ll = "eza -la --icons --git";
         lt = "eza --tree --icons=auto ";
         la = "eza -a --icons=auto ";
         l = "eza -l --icons --git";
+        cd = "z";
+        ci = "zi";
       };
 
-      initExtra = ''
+      initContent = ''
         # History search keybindings
         bindkey '^p' history-search-backward
         bindkey '^n' history-search-forward

@@ -35,7 +35,7 @@ _: {
           ;; Right hand homerow mods (JKL;)
           j (tap-hold $tap-time $hold-time j rmet)
           k (tap-hold $tap-time $hold-time k rctl)
-          l (tap-hold $tap-time $hold-time l ralt)
+          l (tap-hold $tap-time $hold-time l lalt)
           ; (tap-hold $tap-time $hold-time ; rsft)
         )
 
