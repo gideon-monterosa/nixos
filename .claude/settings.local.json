@@ -4,7 +4,11 @@
       "WebFetch(domain:github.com)",
       "WebSearch",
       "WebFetch(domain:raw.githubusercontent.com)",
-      "Bash(sudo darwin-rebuild switch:*)"
+      "Bash(sudo darwin-rebuild switch:*)",
+      "WebFetch(domain:mynixos.com)",
+      "WebFetch(domain:dev.to)",
+      "WebFetch(domain:search.nixos.org)",
+      "Bash(nh os switch:*)"
     ],
     "deny": []
   }

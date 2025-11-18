@@ -8,6 +8,7 @@
 }: {
   imports = [
     ./hardware-configuration.nix
+    ../../modules/kanata.nix
   ];
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
@@ -107,7 +108,7 @@
   # Disable power-profiles-daemon to avoid conflicts with fan control
   services.power-profiles-daemon.enable = false;
 
-  # Define a user account. Don't forget to set a password with ‘passwd’.
+  # Define a user account. Don't forget to set a password with 'passwd'.
   users = {
     users.gideon = {
       isNormalUser = true;

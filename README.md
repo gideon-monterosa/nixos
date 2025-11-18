@@ -26,18 +26,12 @@
 
 - zellij
 
-### Quickshell
+### Thinkpad specific
 
-- add the quickshell config to this repo
-- quickshell bar
-    - volume
-    - network
-- sound pannel
-- notification pannel
-
-### Darwin
-
-- migrate darwin config in here
+- figure out power management
+- charge to 80%
+- fingerprint reader
+- hibernate
 
 ## Examples
 
