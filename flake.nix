@@ -45,13 +45,13 @@
 
   outputs = {
     nixpkgs,
-    nix-darwin,
     home-manager,
     ...
   } @ inputs: {
     nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
       modules = [
         ./hosts/t14s/configuration.nix
+        inputs.nixos-hardware.nixosModules.lenovo-thinkpad-t14s
         home-manager.nixosModules.home-manager
         {
           home-manager = {
@@ -66,7 +66,6 @@
             # };
 
             users.gideon.imports = [
-              # inputs.nixos-hardware.nixosModules.lenovo-thinkpad-t14s
               inputs.nvf.homeManagerModules.default
               ./hosts/t14s/home.nix
             ];
@@ -75,34 +74,34 @@
       ];
     };
 
-    darwinConfigurations."Gideons-MacBook-Pro" = nix-darwin.lib.darwinSystem {
-      system = "x86_64-darwin";
-      modules = [
-        ./hosts/macbook/configuration.nix
-        inputs.nix-homebrew.darwinModules.nix-homebrew
-        {
-          nix-homebrew = {
-            enable = true;
-            user = "gideon";
-          };
-        }
-        home-manager.darwinModules.home-manager
-        {
-          home-manager = {
-            useGlobalPkgs = true;
-            useUserPackages = true;
-
-            extraSpecialArgs = {
-              inherit inputs;
-            };
-
-            users.gideon.imports = [
-              inputs.nvf.homeManagerModules.default
-              ./hosts/macbook/home.nix
-            ];
-          };
-        }
-      ];
-    };
+    # darwinConfigurations."Gideons-MacBook-Pro" = nix-darwin.lib.darwinSystem {
+    #   system = "x86_64-darwin";
+    #   modules = [
+    #     ./hosts/macbook/configuration.nix
+    #     inputs.nix-homebrew.darwinModules.nix-homebrew
+    #     {
+    #       nix-homebrew = {
+    #         enable = true;
+    #         user = "gideon";
+    #       };
+    #     }
+    #     home-manager.darwinModules.home-manager
+    #     {
+    #       home-manager = {
+    #         useGlobalPkgs = true;
+    #         useUserPackages = true;
+    #
+    #         extraSpecialArgs = {
+    #           inherit inputs;
+    #         };
+    #
+    #         users.gideon.imports = [
+    #           inputs.nvf.homeManagerModules.default
+    #           ./hosts/macbook/home.nix
+    #         ];
+    #       };
+    #     }
+    #   ];
+    # };
   };
 }
