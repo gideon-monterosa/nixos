@@ -93,14 +93,14 @@
     enable = true;
     levels = [
       # [fan_level, low_temp, high_temp]
-      [ 0    0   50 ]   # Fan off when below 50°C
-      [ 1   48   55 ]   # Very slow
-      [ 2   50   60 ]   # Slow
-      [ 3   55   65 ]   # Medium-low
-      [ 4   60   70 ]   # Medium
-      [ 5   65   75 ]   # Medium-high
-      [ 6   70   80 ]   # Fast
-      [ 7   75  32767 ] # Full speed above 75°C
+      [0 0 50] # Fan off when below 50°C
+      [1 48 55] # Very slow
+      [2 50 60] # Slow
+      [3 55 65] # Medium-low
+      [4 60 70] # Medium
+      [5 65 75] # Medium-high
+      [6 70 80] # Fast
+      [7 75 32767] # Full speed above 75°C
     ];
   };
 
@@ -114,7 +114,6 @@
       description = "gideon";
       extraGroups = ["networkmanager" "wheel"];
       packages = with pkgs; [
-        git
       ];
     };
 

@@ -58,12 +58,12 @@
             useGlobalPkgs = true;
             useUserPackages = true;
 
-            # extraSpecialArgs = {
-            #   inherit inputs;
-            #   assets = {
-            #     wallpaper = ./assets/wallpaper.jpg;
-            #   };
-            # };
+            extraSpecialArgs = {
+              inherit inputs;
+              assets = {
+                wallpaper = ./assets/wallpaper.jpg;
+              };
+            };
 
             users.gideon.imports = [
               inputs.nvf.homeManagerModules.default

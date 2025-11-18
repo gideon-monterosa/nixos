@@ -6,6 +6,6 @@ _: {
     # ../../home/modules/applications
 
     # ../../home/modules/applications/bitwarden.nix
-    # ../../home/modules/applications/browser.nix
+    ../../home/modules/applications/browser.nix
   ];
 }
