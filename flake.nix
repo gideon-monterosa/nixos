@@ -5,17 +5,19 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
     nixpkgs-stable.url = "github:NixOS/nixpkgs/nixos-25.05";
 
-    nix-darwin = {
-      url = "github:nix-darwin/nix-darwin/master";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    # nix-darwin = {
+    #   url = "github:nix-darwin/nix-darwin/master";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
 
     nix-homebrew.url = "github:zhaofengli/nix-homebrew";
 
     home-manager = {
       url = "github:nix-community/home-manager/release-25.05";
-      inputs.nixpkgs.follows = "nixpkgs-stable";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    nixos-hardware.url = "github:NixOS/nixos-hardware/master";
 
     # quickshell = {
     #   url = "github:outfoxxed/quickshell";
@@ -28,7 +30,7 @@
     #   inputs.elephant.follows = "elephant";
     # };
 
-    # zen-browser.url = "github:0xc000022070/zen-browser-flake";
+    zen-browser.url = "github:0xc000022070/zen-browser-flake";
 
     # firefox-addons = {
     #   url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
@@ -36,49 +38,48 @@
     # };
 
     nvf = {
-      url = "github:notashelf/nvf/v0.8";
-      inputs.nixpkgs.follows = "nixpkgs-stable";
+      url = "github:gideon-monterosa/nvf/v0.8";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
   outputs = {
     nixpkgs,
     nix-darwin,
-    nix-homebrew,
     home-manager,
-    nvf,
     ...
   } @ inputs: {
-    # nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
-    #   modules = [
-    #     ./hosts/nixos-desktop/configuration.nix
-    #     home-manager.nixosModules.home-manager
-    #     {
-    #       home-manager = {
-    #         useGlobalPkgs = true;
-    #         useUserPackages = true;
-    #
-    #         extraSpecialArgs = {
-    #           inherit inputs;
-    #           assets = {
-    #             wallpaper = ./assets/wallpaper.jpg;
-    #           };
-    #         };
-    #
-    #         users.gideon.imports = [
-    #           nvf.homeManagerModules.default
-    #           ./hosts/nixos-desktop/home.nix
-    #         ];
-    #       };
-    #     }
-    #   ];
-    # };
+    nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
+      modules = [
+        ./hosts/t14s/configuration.nix
+        home-manager.nixosModules.home-manager
+        {
+          home-manager = {
+            useGlobalPkgs = true;
+            useUserPackages = true;
+
+            # extraSpecialArgs = {
+            #   inherit inputs;
+            #   assets = {
+            #     wallpaper = ./assets/wallpaper.jpg;
+            #   };
+            # };
+
+            users.gideon.imports = [
+              # inputs.nixos-hardware.nixosModules.lenovo-thinkpad-t14s
+              inputs.nvf.homeManagerModules.default
+              ./hosts/t14s/home.nix
+            ];
+          };
+        }
+      ];
+    };
 
     darwinConfigurations."Gideons-MacBook-Pro" = nix-darwin.lib.darwinSystem {
       system = "x86_64-darwin";
       modules = [
         ./hosts/macbook/configuration.nix
-        nix-homebrew.darwinModules.nix-homebrew
+        inputs.nix-homebrew.darwinModules.nix-homebrew
         {
           nix-homebrew = {
             enable = true;
@@ -96,7 +97,7 @@
             };
 
             users.gideon.imports = [
-              nvf.homeManagerModules.default
+              inputs.nvf.homeManagerModules.default
               ./hosts/macbook/home.nix
             ];
           };
