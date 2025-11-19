@@ -71,6 +71,8 @@
   # Disable power-profiles-daemon to avoid conflicts with fan control
   services.power-profiles-daemon.enable = false;
 
+  programs.niri.enable = true;
+
   # Define a user account. Don't forget to set a password with 'passwd'.
   users = {
     users.gideon = {
