@@ -6,4 +6,5 @@
   ];
 
   xdg.configFile."niri/config.kdl".source = ./config.kdl;
+  xdg.configFile."wallpaper.jpg".source = ../../../../assets/wallpaper.jpg;
 }
