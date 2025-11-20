@@ -4,16 +4,21 @@
 
 ### OS
 
+- shell (simple config first, full customisation later)
+  - bar
+  - media player
+  - controll center
+  - hardware and power monitor
+  - notification center
+
+- stylix styling
 - discord, spotify and teams
-- media player
-- notification service
-- screenshot tool
+- niri screenshot tool keybinds
 - email client
-- ssh key config
-- bitwarden (setup and migration)
-- test screensharing
-- clipboard bindings for hyprland dont work
+- calendar
+- niri clipboard management
 - fonts and nerdfonts
+- test screensharing
 
 ### NVF Nvim Config
 
@@ -32,6 +37,7 @@
 - charge to 80%
 - fingerprint reader
 - hibernate
+- trackpad is pressure sensitive but light tap doent work
 
 ## Examples
 

@@ -5,6 +5,7 @@
   imports = [
     ./hardware-configuration.nix
     ../../modules/kanata.nix
+    ../../modules/power-management.nix
     ../../modules/system/swiss-locale.nix
     ../../modules/system/sudo.nix
     ../../modules/desktop/gnome.nix
@@ -49,27 +50,8 @@
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
-  # Enable fan control in thinkpad_acpi kernel module
-  boot.extraModprobeConfig = "options thinkpad_acpi fan_control=1";
-
-  # Fan control for ThinkPad
-  services.thinkfan = {
-    enable = true;
-    levels = [
-      # [fan_level, low_temp, high_temp]
-      [0 0 50] # Fan off when below 50°C
-      [1 48 55] # Very slow
-      [2 50 60] # Slow
-      [3 55 65] # Medium-low
-      [4 60 70] # Medium
-      [5 65 75] # Medium-high
-      [6 70 80] # Fast
-      [7 75 32767] # Full speed above 75°C
-    ];
-  };
-
-  # Disable power-profiles-daemon to avoid conflicts with fan control
-  services.power-profiles-daemon.enable = false;
+  # Hibernation - resume from swap partition
+  boot.resumeDevice = "/dev/disk/by-uuid/b162b839-1c23-478b-b8cd-dc5047a4cea6";
 
   programs.niri.enable = true;
 
