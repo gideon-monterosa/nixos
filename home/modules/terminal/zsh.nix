@@ -6,6 +6,7 @@
     bat
     zoxide
     zsh-fzf-tab
+    devenv
   ];
 
   programs = {
@@ -16,7 +17,7 @@
       config = {
         # theme = "Visual Studio Dark+";
         style = "header,grid";
-        paging = "never";
+        paging = "auto";
       };
     };
 
@@ -39,8 +40,11 @@
         lt = "eza --tree --icons=auto ";
         la = "eza -a --icons=auto ";
         l = "eza -l --icons --git";
+
         cd = "z";
         ci = "zi";
+
+        v = "nvim";
       };
 
       initContent = ''
@@ -82,20 +86,17 @@
       fileWidgetCommand = "fd --type f --hidden --follow --exclude .git";
       changeDirWidgetCommand = "fd --type d --hidden --follow --exclude .git";
 
-      # Base UI options
       defaultOptions = [
         "--height 40%"
         "--layout=reverse"
         "--border"
       ];
 
-      # File picker (Ctrl+T) with bat preview
       fileWidgetOptions = [
         "--preview 'bat --color=always --style=numbers --line-range :500 {}'"
         "--bind 'ctrl-/:change-preview-window(down|hidden|)'"
       ];
 
-      # Directory picker (Alt+C) with eza preview
       changeDirWidgetOptions = [
         "--preview 'eza --tree --color=always {} | head -200'"
       ];
@@ -104,6 +105,11 @@
     zoxide = {
       enable = true;
       enableZshIntegration = true;
+    };
+
+    direnv = {
+      enable = true;
+      nix-direnv.enable = true;
     };
   };
 }
