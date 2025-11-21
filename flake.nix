@@ -41,6 +41,11 @@
       url = "github:gideon-monterosa/nvf/v0.8";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    stylix = {
+      url = "github:nix-community/stylix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {
@@ -52,6 +57,7 @@
       modules = [
         ./hosts/t14s/configuration.nix
         inputs.nixos-hardware.nixosModules.lenovo-thinkpad-t14s
+        inputs.stylix.nixosModules.stylix
         home-manager.nixosModules.home-manager
         {
           home-manager = {

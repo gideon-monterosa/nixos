@@ -1,0 +1,22 @@
+system: "base16"
+name: "Monokai Pro Light"
+author: "Monokai (https://monokai.pro)"
+variant: "light"
+
+palette:
+  base00: "fafafa" # Background
+  base01: "f2f2f2" # Lighter background
+  base02: "e8e8e8" # Selection background
+  base03: "b8b8b8" # Comments
+  base04: "7c7c7c" # Dark foreground
+  base05: "2d2a2e" # Foreground
+  base06: "1d1a1e" # Light foreground
+  base07: "0d0a0e" # Lightest foreground
+  base08: "f9245c" # Red
+  base09: "e86926" # Orange
+  base0A: "ce9400" # Yellow
+  base0B: "7fae2b" # Green
+  base0C: "00a3bc" # Cyan
+  base0D: "00a3bc" # Blue
+  base0E: "8d67cd" # Purple
+  base0F: "b05d23" # Brown

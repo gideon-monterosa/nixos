@@ -21,7 +21,7 @@
     settings = {
       font-family = "Fira Code";
       font-size = "14";
-      theme = "GitHub Dark High Contrast";
+      # theme = "GitHub Dark High Contrast";
     };
   };
 }

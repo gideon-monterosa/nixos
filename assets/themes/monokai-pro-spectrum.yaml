@@ -1,0 +1,22 @@
+system: "base16"
+name: "Monokai Pro Spectrum"
+author: "Monokai (https://monokai.pro)"
+variant: "dark"
+
+palette:
+  base00: "222222" # Background (purple tint)
+  base01: "363537" # Lighter background
+  base02: "3d3b3d" # Selection background
+  base03: "6b6968" # Comments
+  base04: "8b8889" # Dark foreground
+  base05: "f7f1ff" # Foreground
+  base06: "f7f1ff" # Light foreground
+  base07: "f7f1ff" # Lightest foreground
+  base08: "fc618d" # Red
+  base09: "fd9353" # Orange
+  base0A: "fce566" # Yellow
+  base0B: "7bd88f" # Green
+  base0C: "5ad4e6" # Cyan
+  base0D: "5ad4e6" # Blue
+  base0E: "948ae3" # Purple
+  base0F: "cc7d5f" # Brown

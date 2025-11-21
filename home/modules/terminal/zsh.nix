@@ -14,7 +14,7 @@
     bat = {
       enable = true;
       config = {
-        theme = "Visual Studio Dark+";
+        # theme = "Visual Studio Dark+";
         style = "header,grid";
         paging = "never";
       };

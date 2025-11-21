@@ -11,7 +11,6 @@
   - hardware and power monitor
   - notification center
 
-- stylix styling
 - discord, spotify and teams
 - niri screenshot tool keybinds
 - email client
@@ -33,10 +32,8 @@
 
 ### Thinkpad specific
 
-- figure out power management
-- charge to 80%
 - fingerprint reader
-- hibernate
+- hibernate (not sure if really needed; is configured but doesnt auto hibernate)
 - trackpad is pressure sensitive but light tap doent work
 
 ## Examples

@@ -22,11 +22,11 @@
       scrolloff = 10;
     };
 
-    theme = {
-      enable = true;
-      name = "github";
-      style = "dark_high_contrast";
-    };
+    # theme = {
+    #   enable = true;
+    #   name = "github";
+    #   style = "dark_high_contrast";
+    # };
 
     diagnostics = {
       enable = true;

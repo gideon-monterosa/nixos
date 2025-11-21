@@ -9,6 +9,7 @@
     ../../modules/system/swiss-locale.nix
     ../../modules/system/sudo.nix
     ../../modules/desktop/gnome.nix
+    ../../modules/desktop/stylix.nix
   ];
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
