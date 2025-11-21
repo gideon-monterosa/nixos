@@ -6,7 +6,10 @@
   wayland.windowManager.hyprland = {
     enable = true;
     settings = {
-      input.kb_layout = "ch";
+      input = {
+        kb_layout = "ch";
+        accel_profile = "flat";
+      };
       exec-once = "qs";
 
       decoration = {

@@ -3,10 +3,13 @@
 
   programs.git = {
     enable = true;
-    userName = "Gideon Monterosa";
-    userEmail = "gideon.monterosa@gmail.com";
 
-    extraConfig = {
+    settings = {
+      user = {
+        name = "Gideon Monterosa";
+        email = "gideon.monterosa@gmail.com";
+      };
+
       core = {
         editor = "nvim";
         pager = "delta";
