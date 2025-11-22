@@ -25,6 +25,7 @@
 - mini surround
 - char under cursor not visible because of the colors
 - implement clipboard integration
+- inline completion for languages (for example code in a md file)
 
 ### Terminal
 

@@ -104,7 +104,7 @@ layout {
 }
 
 spawn-at-startup "xwayland-satellite"
-spawn-at-startup "swaybg" "-i" "~/.config/wallpaper.jpg"
+spawn-at-startup "waybar"
 
 hotkey-overlay {
     // Uncomment this line to disable the "Important Hotkeys" pop-up at startup.
