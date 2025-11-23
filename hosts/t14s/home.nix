@@ -8,5 +8,6 @@ _: {
 
     ../../home/modules/applications/bitwarden.nix
     ../../home/modules/applications/browser.nix
+    ../../home/modules/applications/nautilus.nix
   ];
 }

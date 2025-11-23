@@ -6,6 +6,6 @@ _: {
 
     base16Scheme = ../../assets/themes/monokai-pro.yaml;
 
-    autoEnable = true;
+    # autoEnable = true;
   };
 }

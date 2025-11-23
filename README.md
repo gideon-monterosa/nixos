@@ -12,10 +12,8 @@
   - notification center
 
 - discord, spotify and teams
-- niri screenshot tool keybinds
 - email client
 - calendar
-- niri clipboard management
 - fonts and nerdfonts
 - test screensharing
 
@@ -23,10 +21,20 @@
 
 - ui plugin
 - mini surround
-- char under cursor not visible because of the colors
-- implement clipboard integration
+- implement clipboard integratio
 - inline completion for languages (for example code in a md file)
 - highlight TODO comments
+- double esc doesnt close oil popup
+- rename and refactor keybinds
+- quickfix plugin (video in watch later)
+
+### Niri
+
+- niri screenshot tool keybinds
+- Window rules (fe open browser full width)
+- open applications on specific workspaces
+- application shortcuts move to application instead of oppening a second one
+- niri clipboard management
 
 ### Terminal
 
@@ -36,7 +44,6 @@
 
 - fingerprint reader
 - hibernate (not sure if really needed; is configured but doesnt auto hibernate)
-- trackpad is pressure sensitive but light tap doent work
 
 ## Examples
 
