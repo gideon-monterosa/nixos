@@ -46,6 +46,11 @@
       url = "github:nix-community/stylix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    niri = {
+      url = "github:sodiboo/niri-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {
@@ -58,7 +63,11 @@
         ./hosts/t14s/configuration.nix
         inputs.nixos-hardware.nixosModules.lenovo-thinkpad-t14s
         inputs.stylix.nixosModules.stylix
+        inputs.niri.nixosModules.niri
         home-manager.nixosModules.home-manager
+        {
+          nixpkgs.overlays = [inputs.niri.overlays.niri];
+        }
         {
           home-manager = {
             useGlobalPkgs = true;
