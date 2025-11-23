@@ -5,7 +5,6 @@
     # ./hyprpaper.nix
     # ./quickshell.nix
     ./cursor.nix
-    ./walker.nix
+    # ./walker.nix
   ];
 }
-

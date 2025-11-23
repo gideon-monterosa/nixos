@@ -4,7 +4,7 @@ _: {
     ../../home/modules/terminal
 
     ../../home/modules/desktop/niri
-    # ../../home/modules/desktop/walker.nix
+    ../../home/modules/desktop/walker.nix
 
     ../../home/modules/applications/bitwarden.nix
     ../../home/modules/applications/browser.nix
