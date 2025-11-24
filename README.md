@@ -30,11 +30,9 @@
 
 ### Niri
 
-- niri screenshot tool keybinds
-- Window rules (fe open browser full width)
+- screenshot tool keybinds
 - open applications on specific workspaces
-- application shortcuts move to application instead of oppening a second one
-- niri clipboard management
+- clipboard management
 
 ### Terminal
 

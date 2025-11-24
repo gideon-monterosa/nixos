@@ -1,4 +1,20 @@
-{pkgs, ...}: {
+{pkgs, ...}: let
+  # Smart launch script: focus existing window or spawn on specific workspace
+  focusOrSpawn = pkgs.writeShellScript "focus-or-spawn" ''
+    APP_ID="$1"
+    shift 2
+    COMMAND="$@"
+
+    # Check if window with app-id exists
+    WINDOW_ID=$(${pkgs.niri}/bin/niri msg --json windows | ${pkgs.jq}/bin/jq ".[] | select(.app_id | contains(\"zen\")) | .id" | head -n1)
+
+    if [ -n "$WINDOW_ID" ] && [ "$WINDOW_ID" != "null" ]; then
+      ${pkgs.niri}/bin/niri msg action focus-window --id "$WINDOW_ID"
+    else
+      $COMMAND
+    fi
+  '';
+in {
   imports = [
     ./waybar.nix
   ];
@@ -7,6 +23,7 @@
     wl-clipboard
     xwayland-satellite
     brightnessctl
+    jq
   ];
 
   services = {
@@ -39,6 +56,13 @@
   };
 
   programs.niri.settings = {
+    workspaces = {
+      "01" = {name = "dev";};
+      "02" = {name = "browser";};
+      "03" = {name = "chats";};
+      "04" = {name = "mail";};
+    };
+
     input = {
       keyboard.xkb.layout = "ch";
       touchpad = {
@@ -131,12 +155,22 @@
         ];
         open-floating = true;
       }
+      {
+        matches = [{app-id = "zen-beta";}];
+        default-column-width = {proportion = 1.0;};
+        open-on-workspace = "browser";
+      }
+      {
+        matches = [{app-id = "Bitwarden";}];
+        open-floating = true;
+        block-out-from = "screencast";
+      }
     ];
 
     binds = {
       # Launch programs
       "Mod+Return".action.spawn = ["ghostty"];
-      "Mod+B".action.spawn = ["zen"];
+      "Mod+B".action.spawn = ["sh" "-c" "${focusOrSpawn} zen 2 zen"];
       "Mod+Space".action.spawn = ["walker"];
       "Mod+E".action.spawn = ["nautilus"];
 
