@@ -48,6 +48,11 @@
       };
 
       initContent = ''
+        # Completion settings - must come before fzf-tab
+        zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'  # Smart case matching
+        zstyle ':completion:*' menu select
+        zstyle ':completion:*' list-colors "''${(s.:.)LS_COLORS}"
+
         # History search keybindings
         bindkey '^p' history-search-backward
         bindkey '^n' history-search-forward
@@ -56,6 +61,9 @@
 
         # Enable fzf-tab
         source ${pkgs.zsh-fzf-tab}/share/fzf-tab/fzf-tab.plugin.zsh
+
+        # fzf-tab configuration
+        zstyle ':fzf-tab:*' fzf-flags --height=70% --layout=reverse
 
         # Fuzzy cd function
         fcd() {
