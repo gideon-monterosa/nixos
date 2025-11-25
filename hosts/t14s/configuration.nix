@@ -1,11 +1,7 @@
 # Edit this configuration file to define what should be installed on
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
-{
-  pkgs,
-  config,
-  ...
-}: {
+{pkgs, ...}: {
   imports = [
     ./hardware-configuration.nix
     ../../modules/kanata.nix
@@ -13,6 +9,7 @@
     ../../modules/system/swiss-locale.nix
     ../../modules/system/sudo.nix
     ../../modules/desktop/stylix.nix
+    ../../modules/desktop/niri.nix
   ];
 
   nix.settings = {
@@ -60,29 +57,6 @@
 
   # Hibernation - resume from swap partition
   boot.resumeDevice = "/dev/disk/by-uuid/b162b839-1c23-478b-b8cd-dc5047a4cea6";
-
-  programs.niri.enable = true;
-
-  services.displayManager.sddm = {
-    enable = true;
-    package = pkgs.kdePackages.sddm;
-    wayland.enable = true;
-    theme = "sddm-astronaut-theme";
-    extraPackages = with pkgs; [
-      kdePackages.qtsvg
-      kdePackages.qtmultimedia
-      kdePackages.qtvirtualkeyboard
-    ];
-  };
-
-  environment.systemPackages = with pkgs; [
-    (sddm-astronaut.override {
-      themeConfig = {
-        background = config.stylix.image;
-        blur = true;
-      };
-    })
-  ];
 
   # Define a user account. Don't forget to set a password with 'passwd'.
   users = {

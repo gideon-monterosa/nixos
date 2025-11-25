@@ -31,12 +31,12 @@
 ### Niri
 
 - screenshot tool keybinds
-- open applications on specific workspaces
 - clipboard management
 
 ### Terminal
 
 - zellij
+- Tab completions dont use smartcase
 
 ### Thinkpad specific
 
