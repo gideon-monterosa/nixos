@@ -52,6 +52,9 @@
     #media-session.enable = true;
   };
 
+  # Enable swaylock PAM authentication
+  security.pam.services.swaylock = {};
+
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 

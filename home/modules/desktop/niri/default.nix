@@ -17,6 +17,8 @@
 in {
   imports = [
     ./waybar.nix
+    ./swaylock.nix
+    ./swayidle.nix
   ];
 
   home.packages = with pkgs; [
@@ -28,31 +30,6 @@ in {
 
   services = {
     wpaperd.enable = true;
-
-    # TODO: pretty sure this does not yet work
-    swayidle = {
-      enable = true;
-      events = [
-        {
-          event = "before-sleep";
-          command = "${pkgs.systemd}/bin/loginctl lock-session";
-        }
-      ];
-      timeouts = [
-        {
-          timeout = 300; # 5 minutes
-          command = "${pkgs.niri}/bin/niri msg action power-off-monitors";
-        }
-        {
-          timeout = 900; # 15 minutes
-          command = "${pkgs.systemd}/bin/systemctl suspend";
-        }
-        {
-          timeout = 1800; # 30 minutes
-          command = "${pkgs.systemd}/bin/systemctl hibernate";
-        }
-      ];
-    };
   };
 
   programs.niri.settings = {

@@ -6,5 +6,6 @@
     # ./quickshell.nix
     ./cursor.nix
     # ./walker.nix
+    ./swaylock.nix
   ];
 }
