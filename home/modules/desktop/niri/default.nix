@@ -2,11 +2,11 @@
   # Smart launch script: focus existing window or spawn on specific workspace
   focusOrSpawn = pkgs.writeShellScript "focus-or-spawn" ''
     APP_ID="$1"
-    shift 2
+    shift
     COMMAND="$@"
 
     # Check if window with app-id exists
-    WINDOW_ID=$(${pkgs.niri}/bin/niri msg --json windows | ${pkgs.jq}/bin/jq ".[] | select(.app_id | contains(\"zen\")) | .id" | head -n1)
+    WINDOW_ID=$(${pkgs.niri}/bin/niri msg --json windows | ${pkgs.jq}/bin/jq ".[] | select(.app_id | contains(\"$APP_ID\")) | .id" | head -n1)
 
     if [ -n "$WINDOW_ID" ] && [ "$WINDOW_ID" != "null" ]; then
       ${pkgs.niri}/bin/niri msg action focus-window --id "$WINDOW_ID"
@@ -161,6 +161,11 @@ in {
         open-on-workspace = "browser";
       }
       {
+        matches = [{app-id = "teams-for-linux";}];
+        default-column-width = {proportion = 1.0;};
+        open-on-workspace = "chats";
+      }
+      {
         matches = [{app-id = "Bitwarden";}];
         open-floating = true;
         block-out-from = "screencast";
@@ -170,7 +175,8 @@ in {
     binds = {
       # Launch programs
       "Mod+Return".action.spawn = ["ghostty"];
-      "Mod+B".action.spawn = ["sh" "-c" "${focusOrSpawn} zen 2 zen"];
+      "Mod+B".action.spawn = ["sh" "-c" "${focusOrSpawn} zen zen"];
+      "Mod+T".action.spawn = ["sh" "-c" "${focusOrSpawn} teams-for-linux teams-for-linux"];
       "Mod+Space".action.spawn = ["walker"];
       "Mod+E".action.spawn = ["nautilus"];
 

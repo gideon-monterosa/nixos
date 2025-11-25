@@ -11,7 +11,7 @@
   - hardware and power monitor
   - notification center
 
-- discord, spotify and teams
+- discord, spotify
 - email client
 - calendar
 - fonts and nerdfonts
