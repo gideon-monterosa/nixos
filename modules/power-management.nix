@@ -7,6 +7,12 @@ _: {
     HibernateDelaySec=1h
   '';
 
+  services.logind.settings.Login = {
+    HandleLidSwitch = "suspend-then-hibernate";
+    HandleLidSwitchDocked = "ignore";
+    HandleLidSwitchExternalPower = "suspend-then-hibernate";
+  };
+
   services = {
     thinkfan = {
       enable = true;

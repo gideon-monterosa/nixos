@@ -1,4 +1,4 @@
-_: {
+{pkgs, ...}: {
   imports = [
     ../../home/profiles/gideon
     ../../home/modules/terminal
@@ -10,5 +10,11 @@ _: {
     ../../home/modules/applications/browser.nix
     ../../home/modules/applications/nautilus.nix
     ../../home/modules/applications/teams.nix
+  ];
+
+  home.packages = with pkgs; [
+    btop
+    fastfetch
+    powertop
   ];
 }

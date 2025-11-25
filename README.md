@@ -38,6 +38,7 @@
 
 - fingerprint reader
 - hibernate (not sure if really needed; is configured but doesnt auto hibernate)
+- fix speaker sound
 
 ## Examples
 
