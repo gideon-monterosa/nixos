@@ -15,6 +15,21 @@
       desc = "Exit terminal mode";
     }
 
+    # Clipboard
+    {
+      key = "<leader>y";
+      mode = ["n" "v"];
+      action = "\"+y";
+      desc = "Yank to Clipboard";
+    }
+
+    {
+      key = "<leader>p";
+      mode = ["n" "v"];
+      action = "\"+p";
+      desc = "Paste from Clipboard";
+    }
+
     # File Management
     {
       key = "-";
@@ -23,7 +38,7 @@
       desc = "open directory";
     }
 
-    # Find Pickers
+    # Pickers
     {
       key = "<leader><leader>";
       mode = "n";
@@ -181,4 +196,3 @@
     }
   ];
 }
-

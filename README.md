@@ -19,12 +19,9 @@
 
 ### NVF Nvim Config
 
-- ui plugin
 - mini surround
-- implement clipboard integration
 - inline completion for languages (for example code in a md file)
 - highlight TODO comments
-- double esc doesnt close oil popup
 - rename and refactor keybinds
 - quickfix plugin (video in watch later)
 

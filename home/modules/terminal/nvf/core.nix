@@ -44,5 +44,19 @@
         end,
       })
     '';
+
+    luaConfigRC.oil-keymaps = ''
+      vim.api.nvim_create_autocmd('FileType', {
+        pattern = 'oil',
+        desc = 'Close oil floating window with Esc Esc',
+        group = vim.api.nvim_create_augroup('oil-keymaps', { clear = true }),
+        callback = function()
+          vim.keymap.set('n', '<Esc><Esc>', '<cmd>quit<cr>', {
+            buffer = true,
+            desc = 'Close oil floating window'
+          })
+        end,
+      })
+    '';
   };
 }

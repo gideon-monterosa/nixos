@@ -12,6 +12,7 @@
 
       nix.enable = true;
       # qml.enable = true;
+      markdown.enable = true;
     };
   };
 }
