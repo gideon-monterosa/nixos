@@ -10,7 +10,8 @@
       "WebFetch(domain:search.nixos.org)",
       "Bash(nh os switch:*)",
       "Bash(systemctl --user cat:*)",
-      "Bash(systemctl --user show:*)"
+      "Bash(systemctl --user show:*)",
+      "Bash(journalctl:*)"
     ],
     "deny": []
   }

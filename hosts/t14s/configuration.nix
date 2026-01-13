@@ -12,6 +12,10 @@
     ../../modules/desktop/niri.nix
   ];
 
+  environment.systemPackages = [
+    pkgs.openscad-unstable
+  ];
+
   nix.settings = {
     experimental-features = ["nix-command" "flakes"];
     substituters = ["https://nix-community.cachix.org"];
@@ -21,7 +25,8 @@
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
+  boot.loader.systemd-boot.configurationLimit = 10;
+  boot.loader.efi.canTouchEfiVariables = false;
 
   networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.

@@ -10,11 +10,14 @@
     ../../home/modules/applications/browser.nix
     ../../home/modules/applications/nautilus.nix
     ../../home/modules/applications/teams.nix
+    ../../home/modules/applications/pdf.nix
   ];
 
   home.packages = with pkgs; [
     btop
     fastfetch
     powertop
+    typst
+    zotero
   ];
 }
