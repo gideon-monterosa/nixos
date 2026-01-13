@@ -6,6 +6,7 @@
     bat
     zoxide
     zsh-fzf-tab
+    devenv
   ];
 
   programs = {
@@ -14,9 +15,9 @@
     bat = {
       enable = true;
       config = {
-        theme = "Visual Studio Dark+";
+        # theme = "Visual Studio Dark+";
         style = "header,grid";
-        paging = "never";
+        paging = "auto";
       };
     };
 
@@ -34,15 +35,24 @@
       };
 
       shellAliases = {
-        # Eza aliases
         ls = "eza --icons=auto ";
         ll = "eza -la --icons --git";
         lt = "eza --tree --icons=auto ";
         la = "eza -a --icons=auto ";
         l = "eza -l --icons --git";
+
+        cd = "z";
+        ci = "zi";
+
+        v = "nvim";
       };
 
       initContent = ''
+        # Completion settings - must come before fzf-tab
+        zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'  # Smart case matching
+        zstyle ':completion:*' menu select
+        zstyle ':completion:*' list-colors "''${(s.:.)LS_COLORS}"
+
         # History search keybindings
         bindkey '^p' history-search-backward
         bindkey '^n' history-search-forward
@@ -51,6 +61,9 @@
 
         # Enable fzf-tab
         source ${pkgs.zsh-fzf-tab}/share/fzf-tab/fzf-tab.plugin.zsh
+
+        # fzf-tab configuration
+        zstyle ':fzf-tab:*' fzf-flags --height=70% --layout=reverse
 
         # Fuzzy cd function
         fcd() {
@@ -81,20 +94,17 @@
       fileWidgetCommand = "fd --type f --hidden --follow --exclude .git";
       changeDirWidgetCommand = "fd --type d --hidden --follow --exclude .git";
 
-      # Base UI options
       defaultOptions = [
         "--height 40%"
         "--layout=reverse"
         "--border"
       ];
 
-      # File picker (Ctrl+T) with bat preview
       fileWidgetOptions = [
         "--preview 'bat --color=always --style=numbers --line-range :500 {}'"
         "--bind 'ctrl-/:change-preview-window(down|hidden|)'"
       ];
 
-      # Directory picker (Alt+C) with eza preview
       changeDirWidgetOptions = [
         "--preview 'eza --tree --color=always {} | head -200'"
       ];
@@ -103,6 +113,11 @@
     zoxide = {
       enable = true;
       enableZshIntegration = true;
+    };
+
+    direnv = {
+      enable = true;
+      nix-direnv.enable = true;
     };
   };
 }

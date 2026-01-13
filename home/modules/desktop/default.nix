@@ -1,10 +1,11 @@
 {
   imports = [
-    ./hyprland.nix
-    ./hyprpaper.nix
-    ./quickshell.nix
+    ./niri
+    # ./hyprland.nix
+    # ./hyprpaper.nix
+    # ./quickshell.nix
     ./cursor.nix
-    ./walker.nix
+    # ./walker.nix
+    ./swaylock.nix
   ];
 }
-

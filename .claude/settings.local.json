@@ -1,0 +1,18 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:github.com)",
+      "WebSearch",
+      "WebFetch(domain:raw.githubusercontent.com)",
+      "Bash(sudo darwin-rebuild switch:*)",
+      "WebFetch(domain:mynixos.com)",
+      "WebFetch(domain:dev.to)",
+      "WebFetch(domain:search.nixos.org)",
+      "Bash(nh os switch:*)",
+      "Bash(systemctl --user cat:*)",
+      "Bash(systemctl --user show:*)",
+      "Bash(journalctl:*)"
+    ],
+    "deny": []
+  }
+}

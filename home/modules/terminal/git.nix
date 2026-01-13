@@ -1,19 +1,26 @@
-_: {
+{pkgs, ...}: {
+  home.packages = [pkgs.delta];
+
   programs.git = {
     enable = true;
-    userName = "Gideon Monterosa";
-    userEmail = "gideon.monterosa@gmail.com";
 
-    extraConfig = {
-      core.editor = "nvim";
+    settings = {
+      user = {
+        name = "Gideon Monterosa";
+        email = "gideon.monterosa@gmail.com";
+      };
+
+      core = {
+        editor = "nvim";
+        pager = "delta";
+      };
       color.ui = "auto";
       push.autoSetupRemote = true;
       init.defaultBranch = "main";
-    };
 
-    delta = {
-      enable = true;
-      options = {
+      interactive.diffFilter = "delta --color-only";
+
+      delta = {
         navigate = true;
         light = false;
         line-numbers = true;

@@ -4,40 +4,41 @@
 
 ### OS
 
-- discord, spotify and teams
-- media player
-- notification service
-- screenshot tool
+- shell (simple config first, full customisation later)
+  - bar
+  - media player
+  - controll center
+  - hardware and power monitor
+  - notification center
+
+- discord, spotify
 - email client
-- ssh key config
-- bitwarden (setup and migration)
-- test screensharing
-- clipboard bindings for hyprland dont work
+- calendar
 - fonts and nerdfonts
+- test screensharing
 
 ### NVF Nvim Config
 
-- ui plugin
 - mini surround
-- char under cursor not visible because of the colors
-- implement clipboard integration
+- inline completion for languages (for example code in a md file)
+- highlight TODO comments
+- rename and refactor keybinds
+- quickfix plugin (video in watch later)
+
+### Niri
+
+- screenshot tool keybinds
+- clipboard management
 
 ### Terminal
 
 - zellij
 
-### Quickshell
+### Thinkpad specific
 
-- add the quickshell config to this repo
-- quickshell bar
-    - volume
-    - network
-- sound pannel
-- notification pannel
-
-### Darwin
-
-- migrate darwin config in here
+- fingerprint reader
+- hibernate (not sure if really needed; is configured but doesnt auto hibernate)
+- fix speaker sound
 
 ## Examples
 
